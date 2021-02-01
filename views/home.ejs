@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Website | Welcome</title>
+        
+	  <script src="/javascripts/jquery-3.5.1.min.js"></script>
+	<link rel="stylesheet"  type="text/css"  href="/stylesheets/cssformyweb.css">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+
+<body >
+  
+  
+    <div id="menu_top">
+		
+        <ul id="menu_left">
+    <li> <a href="#banner-slide" class="scrollTo" tittle = "Trang chủ">Trang chủ</a></li>
+    <li><a href="#shop"class="scrollTo"  title="San pham">Sản phẩm</a>
+    <li><a href=".about" class="scrollTo" tittle ="Gioi thieu">Giới thiệu</a></li>
+     <li><a href="#footer" class="scrollTo" title="Lien he">Liên hệ</a></li>
+    </ul>
+    <ul id="sm">		
+    <li id="login"><a href="/homepage/login">Đăng nhập</a></li>
+        <li><a href="/homepage/SignUp">Đăng ký</a></li>
+      
+        <li class="cart-list"><button id="cart" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Giỏ hàng</button></br>
+        <div id="myModal" class="modal" >
+            <form class="modal-content" action="/" method="POST">
+                <div class="modal-header">
+                    <h5 class="modal-title">Giỏ Hàng</h5>
+                    <span class="close">&times;</span>
+                </div>
+                
+                <div class="modal-body">
+                    <table class="content-table"  >
+                        <div class="cart-items">
+                            <tr class="cart-row-name"></tr> 
+                                <td class="cart-item-name"><div class="cart-tittle">Sản phẩm</div></td>
+                                <td class="cart-num-name"><div class="cart-tittle">Số lượng</div></td>
+                                <td class="cart-price-name"><div class="cart-tittle">Đơn giá</div></td>
+                                <td class="cart-total-name"><div class="cart-tittle">Tổng</div></td>
+                            </tr
+                        </div>
+                        <tr>    
+                            
+                        </tr>
+                        <div class="total-price-bill number"></div>
+                            <span class="total-price-bill tittle">Tổng hóa đơn:</span>
+                    </table>
+                </div>   
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                    <form action="/homepage/send" method="POST">
+                    <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                    </form>
+                </div>
+            </form>
+                
+                  
+        </div></li>
+    </li>
+<form action="/homepage/search" method ="GET">
+    <li> <i class="fa fa-search"></i><i><input name="search" id="search" type="text" placeholder="Search" /></i></li>
+   <button class="btn btn-link" type="submit">Tìm kiếm</button>
+</form>
+    </ul>
+   	
+         </div>
+    <div id="banner-slide">
+            <div class="banner-img">
+            <ul>
+               
+                <li><img class="slide-img" name="slides"/></li>
+            </ul>
+            </div>
+            <div id="slide-btn">
+                <span id="btn-left"><i class="fa fa-angle-left"></i></span>
+                <span id="btn-right"><i class="fa fa-angle-right"></i></span>
+                <ul>
+                    <li data-tendata="id1"><i class="fa fa-circle"></i></li>
+                    <li data-tendata="id2"><i class="fa fa-circle"></i></li>
+                    <li data-tendata="id3"><i class="fa fa-circle"></i></li>
+                    
+                </ul>
+            </div>
+        </div>
+            <div id="shop">
+                
+                <table id="sp">
+                   
+                    <tr>
+                        <%product.forEach((item)=>{%>
+                        <td class="clothe-column"><img class="shop-image" src="<%=item.imageURL%>" /><br>
+                            <a name="product_name" class="content-product" href="#"><%=item.imageTitle%></a><br>
+                        Size: <a href="#">S M L XL</a><br>
+                        Price: <span class="clothes-price"> <%=item.imagePrice%></span><br>
+                        <button class="btn btn-success  add-to-cart">Wanna Buy ?</button>
+                        </td>
+                        <%});%>
+                        
+                    </tr>
+                   
+                
+                </table>
+
+            </div>
+            <div class="about">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4">
+                        <img src="/images/Web Pictrure/iamge/Web image/about1.jpg" id="about1"/>
+                        </div>
+                        <div class="col-8">
+                            <h1>About us</h1>
+                            <p>[ TUMSUNIFORM ] – LÀ DÒNG SẢN PHẨM MỚI CHO VIỆC MẶC HÀNG NGÀY. VỚI CHẤT LIỆU ĐƯỢC CHỌN LỌC THOÁNG MÁT, DỄ CHỊU, CÙNG SỰ CÂN CHỈNH PHOM ÁO, QUẦN ĐỂ NGƯỜI MẶC CÓ SỰ THOẢI MÁI TỐT NHẤT.
+
+                            </p>
+                        </div>
+                        
+                        <div class="col-6">
+                            <h1>Khói</h1><br/>
+                            <p>Có những ngày chúng ta thức dậy, nhìn lên trần nhà, rồi cảm thấy không còn muốn quan tâm tới điều gì đã, đang hay sắp xảy ra nữa.
+                            Có hay không lúc này mình đang chết từ bên trong. Nhưng ngày mai vẫn sẽ là một ngày khác mà. Nếu không thì sẽ là ngày mốt..,
+                            Vậy...đừng để nó trở thành thói quen kẻo chúng ta sẽ bị chết dần...rồi chết hẳn, chết mà vẫn còn thở.!
+                            “I’m dead inside” đến từ một người đồng cảm, đồng suy nghĩ của mình (TUM)</p></div>
+                            <div class="col-6"><img src="/images/Web Pictrure/iamge/Web image/background.jpg" id="about2"/></div>
+                </div>
+                
+            </div>
+            </div>
+            <div class="container-fluid" id="footer">
+                <div class="row">
+                    <div class="col-3">
+                        <h1>CONTACT US</h1>
+                        Địa chỉ: 169 Sư Vạn Hạnh ,quận 10,Thành phố Hồ Chí Minh<br/>
+                        SĐT:0129153194<br/>
+                        Gmail: Conmeongugnocdangiu@gmail.com
+                    </div>
+                    <div class="col-3">
+                        <h1>Social Media</h1>
+                        <a href="https://www.instagram.com/tummachines/"><i class="fa fa-instagram"></i> Instagram:@tummachines</a><br/>
+                        <a href="https://www.facebook.com/tummachines/"><i class="fa fa-facebook-f"></i> Facebook: Tum Machine</a>
+                    </div>
+                    <div class="col-3">
+                        <h1>Menu</h1>
+                       
+                  <a href="#banner-slide" class="scrollTo" tittle = "Trang chủ">Trang chủ</a><br/>
+                        <a href="#shop"class="scrollTo"  title="San pham">Sản phẩm</a><br/>
+                        <a href=".about" class="scrollTo" tittle ="Gioi thieu"> Giới thiệu</a><br/>
+                        <a href="#footer" class="scrollTo" title="Lien he">Liên hệ</a><br/>
+                            </ul>
+                    </div>
+                    <div class="col-3">
+                        <h1 id="credit">Thanks for coming by our Website, have a nice day !!!!  </h1>
+                    </div>
+                </div>
+            </div>
+       
+</body>
+<script src="/javascripts/home.JS"></script>
+</html>
+    
+        
+        
+            
+       
+
+
+    
+    
+   
+    
+    
+    
+       
+        
+                   
+                   
+                   
+                     
+                      
+               

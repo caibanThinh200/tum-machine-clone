@@ -1,0 +1,16 @@
+.shop-image{
+    width:200px;
+    height: 200px;
+}
+ul li{
+    padding:50px;
+    list-style:none;
+}
+h1{
+    padding:50px;
+    margin-left: 500px;
+}
+td{
+    padding:100px 50px;
+    
+}
